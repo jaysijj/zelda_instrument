@@ -10,20 +10,15 @@ body{
 }
 main{
     background-color: black;
-/*
-    max-width: 100%;
-    max-height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items:center
-    */
 }
+/*Deku Link*/
 main img{
     cursor: pointer;
     width: 300px;
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     left: 50%;
+    margin-left: -150px;
 }
 main img:active{
     transform: scale(1.03) rotate(3deg);
@@ -34,7 +29,7 @@ header img{
     position: absolute;
     animation-name: grow-moon;
     animation-timing-function: ease-in-out;
-    animation-duration: 20s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-delay: 2s, 10s;
@@ -48,4 +43,84 @@ header img{
     100%{
         transform:scale(1.4) rotate(-20deg);
     }
+}
+
+.dust1{
+    position: absolute;
+    left: -10px;
+    top: 400px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(50deg);
+    background-color: rgba(131, 133, 177, 0.7);
+    border-radius: 47%;
+    animation-name: dust-moviment;
+    animation-timing-function: ease-in-out;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+.dust2{
+    position: absolute;
+    left: 400px;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(50deg);
+    background-color: rgba(233, 251, 101, 0.8);
+    border-radius: 47%;
+    animation-name: dust-moviment2;
+    animation-timing-function: ease-in-out;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    animation-delay: 10s;
+}
+
+@keyframes dust-moviment{
+
+    20%{
+        transform: translate(40vw, -50px) scale(0.8);
+
+    }
+    40%{
+        transform: translateX(60vw);
+    }
+    100%{
+        transform: translate(100vw, -80vh) scale(0.8);
+    }
+}
+
+@keyframes dust-moviment2{
+
+    20%{
+        transform: translate(40vw, 20vh) scale(0.7);
+
+    }
+    40%{
+        transform: translate(-40vw, 40vh);
+    }
+    60%{
+        transform: translate(40vw, 80vh) scale(0.7);
+    }
+    100%{
+        transform: translate(73vw, 60vh);
+    }
+}
+
+#botoes{
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    bottom: 20px;
+}
+.Pipe{
+    cursor: pointer;
+    width: 80px;
+    height: 70px;
+    background-color: rgb(241, 163, 16);
+    border: solid rgb(3, 15, 5) 3px;
+    border-radius: 50px;
+}
+.Pipe:active{
+    background-color: rgb(83, 110, 2);
 }
