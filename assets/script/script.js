@@ -1,12 +1,3 @@
-/*
-const link = document.querySelector("main")
-link.addEventListener('click',playNote)
-function playNote(){
-    const noteA = document.querySelector('#buttonA')
-    noteA.play()
-}*/
-
-
 
 const link = document.querySelector('.Pipes_A')
 link.addEventListener('click', () => {
@@ -32,5 +23,7 @@ const link5 = document.querySelector('.Pipes_E')
 link5.addEventListener('click', () => {
     document.querySelector('#buttonE').play()
 })
+
+/*
 const clicou = document.querySelector('.Pipe')
-clicou.addEventListener('click', )
+clicou.addEventListener('click', )*/
