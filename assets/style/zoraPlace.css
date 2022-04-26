@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.zoraPlace{
+    background-image: url(../img/Ocean_Fishing_Hole.png);
+    background-size: cover;
+    width: 100vw;
+}

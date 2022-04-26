@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zelda Instrument</title>
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/zoraPlace.css">
 </head>
-<body>
+<body class="dekuPlace">
     <div id="botoes" >
         <button class="Pipe Pipes_A">A</button>
         <button class="Pipe Pipes_B">B</button>
@@ -16,11 +17,16 @@
         <button class="Pipe Pipes_E">E</button>
     </div>
 
+    <section>
+        <a href="index.html"><img class="mask maskDeku" src="assets/img/Deku-Mask.png" alt=""></a>
+        <a href="assets/html/goronPlace.html"><img class="mask maskGoron" src="assets/img/Goron-Mask.png" alt=""></a>
+        <a href="assets/html/zoraPlace.html">        <img class="mask maskZora" src="assets/img/Zora-Mask.png" alt=""></a>
+    </section>
     <div>
         <div class="dust1"></div>
         <div class="dust2"></div>
     </div>
-    <header>
+    <header class="moon">
         <img src="assets/img/Moon.png" alt="">
     </header>
     <main class="dekuLink">
@@ -32,6 +38,7 @@
     <audio id="buttonC" src="assets/sound/MM_Notes_Pipes_C_short.wav"></audio>
     <audio id="buttonD" src="assets/sound/MM_Notes_Pipes_D_short.wav"></audio>
     <audio id="buttonE" src="assets/sound/MM_Notes_Pipes_E_short.wav"></audio>
+    <audio id="gaspDeku" src="assets/sound/MM_DekuLink_Gasp1.wav"></audio>
 
     <script src="assets/script/script.js"></script>
 </body>
