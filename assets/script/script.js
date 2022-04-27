@@ -3,7 +3,7 @@ const playAll = ['playA', 'playB', 'playC', 'playD', 'playE']
  
 
 for (let i=0; i<playAll.length;i++){
-    const link = document.querySelector(`.Pipes_${letters[i]}`)
+    const link = document.querySelector(`.button${letters[i]}`)
     link.addEventListener('click', playAll[i])
 }*/
 
@@ -12,19 +12,32 @@ const link0 = document.querySelector('.dekuLink')
 link0.addEventListener('click', gaspDeku)
 maskDeku0.addEventListener('click', gaspDeku)
 
-const link = document.querySelector('.Pipes_A')
+const link = document.querySelector('.buttonA')
 link.addEventListener('click', playA)
 
-const link2 = document.querySelector('.Pipes_B')
+link.addEventListener('mousedown', ()=>{
+    const k = document.querySelector('main')
+    //k.classList.add('dekuLink-active')
+    k.children[0].setAttribute('class','dekuLink-active')
+})
+link.addEventListener('mouseup', ()=>{
+    const k = document.querySelector('main')
+    k.children[0].setAttribute('class','')
+})
+
+const linkSoltar = document.querySelector('.play_buttonA')
+
+
+const link2 = document.querySelector('.buttonB')
 link2.addEventListener('click', playB)
 
-const link3 = document.querySelector('.Pipes_C')
+const link3 = document.querySelector('.buttonC')
 link3.addEventListener('click', playC)
 
-const link4 = document.querySelector('.Pipes_D')
+const link4 = document.querySelector('.buttonD')
 link4.addEventListener('click', playD)
 
-const link5 = document.querySelector('.Pipes_E')
+const link5 = document.querySelector('.buttonE')
 link5.addEventListener('click', playE)
 
 window.addEventListener('keydown', (evento)=>{
@@ -47,24 +60,31 @@ window.addEventListener('keydown', (evento)=>{
 })
 
 function playA(){
-    document.querySelector('#buttonA').play()
+    let noteAudio = document.querySelector('.play_buttonA')
+    noteAudio.currentTime = 0 //Retira o delay de aperto consecutivo das teclas
+    noteAudio.play()
 }
 function playB(){
-    document.querySelector('#buttonB').play()
+    let noteAudio = document.querySelector('.play_buttonB')
+    noteAudio.currentTime = 0
+    noteAudio.play()
 }
 function playC(){
-    document.querySelector('#buttonC').play()
+    let noteAudio = document.querySelector('.play_buttonC')
+    noteAudio.currentTime = 0
+    noteAudio.play()
 }
 function playD(){
-    document.querySelector('#buttonD').play()
+    let noteAudio = document.querySelector('.play_buttonD')
+    noteAudio.currentTime = 0
+    noteAudio.play()
 }
 function playE(){
-    document.querySelector('#buttonE').play()
+    let noteAudio = document.querySelector('.play_buttonE')
+    noteAudio.currentTime = 0
+    noteAudio.play()
 }
 function gaspDeku(){
-    document.querySelector('#gaspDeku').play()
+    document.querySelector('.gaspDeku').play()
 }
 
-/*
-const clicou = document.querySelector('.Pipe')
-clicou.addEventListener('click', )*/

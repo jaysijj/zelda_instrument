@@ -21,6 +21,10 @@
 .dekuLink img:active{
     transform: scale(1.03) rotate(3deg);
 }
+.dekuLink-active{
+    animation-name: deku-move;
+    animation-duration: 0.2s;
+}
 /*Moon*/
 .moon img{
     width: 300px;
@@ -32,7 +36,14 @@
     animation-direction: alternate;
     animation-delay: 2s, 10s;
 }
-
+@keyframes deku-move {
+    50%{
+        transform: scale(1.03) rotate(3deg);
+    }
+    100%{
+        transform: scale(1.0) rotate(-3deg);
+    }
+}
 
 @keyframes grow-moon{
     0%{
