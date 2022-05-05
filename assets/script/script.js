@@ -12,7 +12,7 @@ function playAlli(evento){
     noteAudio.play()
 } */
 const maskDeku0 = document.querySelector('.maskDeku')
-const link0 = document.querySelector('.dekuLink')
+const link0 = document.querySelector('.Link')
 link0.addEventListener('click', gaspDeku)
 maskDeku0.addEventListener('click', gaspDeku)
 
@@ -44,8 +44,8 @@ for (let i=0;i<listAll.length;i++){
     const tecla = listAll[i]
     tecla.addEventListener('mousedown', ()=>{
         const k = document.querySelector('main')
-        //k.classList.add('dekuLink-active')
-        k.children[0].setAttribute('class','dekuLink-active')
+        //k.classList.add('Link-active')
+        k.children[0].setAttribute('class','Link-active')
     })
     tecla.addEventListener('mouseup', ()=>{
         const k = document.querySelector('main')
@@ -102,7 +102,7 @@ function playE(){
     noteAudio.play()
 }
 function gaspDeku(){
-    document.querySelector('.play_gaspDeku').play()
+    document.querySelector('.play_gasp').play()
 }
 
 addEventListener('load', gaspDeku)

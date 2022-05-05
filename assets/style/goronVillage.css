@@ -4,6 +4,11 @@
 }
 .goronVillage{
     background-image: url(../img/Fire_Temple2.png);
-    background-size: cover;
-    width: 100vw;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat; 
+}
+
+.goronLink img{
+    width: 400px;
+    margin-left: -200px;
 }

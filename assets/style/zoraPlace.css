@@ -4,6 +4,6 @@
 }
 .zoraPlace{
     background-image: url(../img/Ocean_Fishing_Hole.png);
-    background-size: cover;
-    width: 100vw;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat; 
 }
