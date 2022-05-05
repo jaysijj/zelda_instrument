@@ -1,12 +1,16 @@
-/*const letters = ['A', 'B', 'C', 'D', 'E']
+/*const letters = ['buttonA', 'buttonB', 'buttonC', 'buttonD', 'buttonE']
 const playAll = ['playA', 'playB', 'playC', 'playD', 'playE']
  
 
 for (let i=0; i<playAll.length;i++){
-    const link = document.querySelector(`.button${letters[i]}`)
-    link.addEventListener('click', playAll[i])
-}*/
+    const link = document.querySelector(letters[i])
+    link.addEventListener('click', playAlli(`.play_${letters[i]}`))
+}
 
+function playAlli(evento){
+    let noteAudio = document.querySelector(evento)
+    noteAudio.play()
+} */
 const maskDeku0 = document.querySelector('.maskDeku')
 const link0 = document.querySelector('.dekuLink')
 link0.addEventListener('click', gaspDeku)
@@ -15,15 +19,8 @@ maskDeku0.addEventListener('click', gaspDeku)
 const link = document.querySelector('.buttonA')
 link.addEventListener('click', playA)
 
-link.addEventListener('mousedown', ()=>{
-    const k = document.querySelector('main')
-    //k.classList.add('dekuLink-active')
-    k.children[0].setAttribute('class','dekuLink-active')
-})
-link.addEventListener('mouseup', ()=>{
-    const k = document.querySelector('main')
-    k.children[0].setAttribute('class','')
-})
+
+
 
 const linkSoltar = document.querySelector('.play_buttonA')
 
@@ -39,6 +36,26 @@ link4.addEventListener('click', playD)
 
 const link5 = document.querySelector('.buttonE')
 link5.addEventListener('click', playE)
+
+
+// vai movimentar o personagem ao clicar no botão
+const listAll = document.querySelectorAll('.Pipe')
+for (let i=0;i<listAll.length;i++){
+    const tecla = listAll[i]
+    tecla.addEventListener('mousedown', ()=>{
+        const k = document.querySelector('main')
+        //k.classList.add('dekuLink-active')
+        k.children[0].setAttribute('class','dekuLink-active')
+    })
+    tecla.addEventListener('mouseup', ()=>{
+        const k = document.querySelector('main')
+        k.children[0].setAttribute('class','')
+    })
+}
+
+
+
+
 
 window.addEventListener('keydown', (evento)=>{
     console.log(evento)
@@ -85,6 +102,7 @@ function playE(){
     noteAudio.play()
 }
 function gaspDeku(){
-    document.querySelector('.gaspDeku').play()
+    document.querySelector('.play_gaspDeku').play()
 }
 
+addEventListener('load', gaspDeku)
