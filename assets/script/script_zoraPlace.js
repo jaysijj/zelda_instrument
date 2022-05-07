@@ -20,6 +20,9 @@ for (let i=0; i<listaButton.length; i++){
     // Associando as teclas para acionar o som
     const keys = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG']
     addEventListener('keydown', (evento) => {
+        if (evento.repeat){ //evitar que crie um looping ao pressionar uma tecla.
+            return
+        } 
         if (evento.code == keys[i] ){
             playAll(`.play_${instrumento}`)
             link.setAttribute('class','Link-active')
@@ -39,21 +42,35 @@ for (let i=0; i<listaButton.length; i++){
 }
 
 function playAll(evento){
-    let botao = document.querySelector(evento)
-    botao.currentTime = 0
-    botao.play()
+    let audio = document.querySelector(evento)
+    audio.currentTime = 0
+    audio.play()
 }
+/*
+const songOfTime = ['KeyA', 'KeyS']
+const listaKey = []
 
+addEventListener('keydown', evento=>{
+    const botao = evento.code
+    listaKey.push(botao)
+    console.log(listaKey)
+    for (let i=0;i<listaKey.length; i++){
+        if (listaKey[i] == songOfTime[i]){
+            playSong()
+        }
+    }
 
+    if (listaKey.length == 5){
+        listaKey.splice(0,5)
+    }
+    console.log(songOfTime)
+})
 
-
-
-
-
-function lua(){
-    console.log('olá')
+function playSong(){
+    let song = document.querySelector('.songOfTime')
+    song.play()
 }
-
+*/
 
 
 addEventListener('load', ()=>{
