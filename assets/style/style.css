@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
 }
+
 .dekuPlace{
     background-image: url("../img/landscape.png");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;    
     max-width: 100%;
     max-height: 100%;
+    Overflow: hidden;   
 }
 
 /*Link*/
@@ -26,6 +28,9 @@
     animation-name: deku-move;
     animation-duration: 0.2s;
 }
+.Link-activeLonger{
+    animation: deku-move 0.9s infinite alternate;
+}
 /*Moon*/
 .moon img{
     width: 300px;
@@ -36,6 +41,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-delay: 2s, 10s;
+    z-index: -1;
 }
 @keyframes deku-move {
     50%{
@@ -55,6 +61,14 @@
     }
 }
 
+.dust{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -99;
+}
+
 .dust1{
     position: absolute;
     left: -10px;
@@ -69,6 +83,7 @@
     animation-duration: 25s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
+    Overflow: hidden;   
 }
 .dust2{
     position: absolute;
@@ -84,13 +99,12 @@
     animation-duration: 35s;
     animation-iteration-count: infinite;
     animation-delay: 10s;
+    Overflow: hidden;   
 }
 
 @keyframes dust-moviment{
-
     20%{
         transform: translate(40vw, -50px) scale(0.8);
-
     }
     40%{
         transform: translateX(60vw);
@@ -136,13 +150,48 @@
     font-size: 1.4em;
 }
 
-.btt:active:focus, .btt_active{
+ .btt_active{
     outline: none;
     background-color: rgb(104, 135, 10);
     border: 4px solid rgb(104, 135, 10);
     color: white;
     box-shadow: 3px 3px 0 rgb(35, 47, 2) inset, 1px 1px 3px rgb(217, 205, 205);
 }
+
+.partituraButton{
+    position: absolute;
+    cursor: pointer;
+    top: 15%;
+    right: 2%;
+    width: 35px;
+}
+
+.partitura{
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    width: 245px;
+    background-color: rgba(41, 44, 43, 0.9);
+    color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.2s;
+    Transform: scale(0); 
+    visibility:hidden;
+}
+.partInvisible{
+    visibility:visible;
+    Transform: scale(1); 
+}
+h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+h3, p{
+    padding: 5px 0;
+}
+
 @media screen and (max-width: 580px){
     .moon img{
         width: 40%;
@@ -153,6 +202,20 @@
     }
     #botoes{
         margin-left: -150px;
+    }
+    .Link img{
+        cursor: pointer;
+        width: 200px;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        margin-left: -100px;
+    }
+    .partituras{
+        width: 180px;
+        left: 50%;
+        margin-left:-90px ;
+        font-size: 12px;
     }
 }
 
@@ -171,5 +234,4 @@
 .maskZora{
     height: 50px;
     margin-top: 30px;
-
 }

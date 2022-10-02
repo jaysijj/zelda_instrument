@@ -1,46 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zelda Instrument</title>
-    <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="stylesheet" href="assets/style/zoraPlace.css">
-</head>
-<body class="dekuPlace">
-    <div id="botoes" >
-        <button class="btt buttonA">A</button>
-        <button class="btt buttonB">S</button>
-        <button class="btt buttonC">D</button>
-        <button class="btt buttonD">F</button>
-        <button class="btt buttonE">G</button>
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/zoraPlace.css" />
+  </head>
+  <body class="dekuPlace">
+    <div id="botoes">
+      <button class="btt KeyA">A</button>
+      <button class="btt KeyS">S</button>
+      <button class="btt KeyD">D</button>
+      <button class="btt KeyF">F</button>
+      <button class="btt KeyG">G</button>
     </div>
 
     <section>
-        <a href="index.html"><img class="mask maskDeku" src="assets/img/Deku-Mask.png" alt=""></a>
-        <a href="assets/html/goronPlace.html"><img class="mask maskGoron" src="assets/img/Goron-Mask.png" alt=""></a>
-        <a href="assets/html/zoraPlace.html">        <img class="mask maskZora" src="assets/img/Zora-Mask.png" alt=""></a>
+      <a href="index.html"
+        ><img class="mask maskDeku" src="assets/img/Deku-Mask.png" alt=""
+      /></a>
+      <a href="assets/html/goronPlace.html"
+        ><img class="mask maskGoron" src="assets/img/Goron-Mask.png" alt=""
+      /></a>
+      <a href="assets/html/zoraPlace.html">
+        <img class="mask maskZora" src="assets/img/Zora-Mask.png" alt=""
+      /></a>
     </section>
-    <div>
-        <div class="dust1"></div>
-        <div class="dust2"></div>
+    <div class="dust">
+      <div class="dust1"></div>
+      <div class="dust2"></div>
     </div>
+
+    <div class="partituras">
+      <img class="partituraButton" src="./assets/img/menu-line.svg" alt="" />
+      <div class="partitura">
+        <div class="tabela">
+          <h3>Melodias</h3>
+          <p>D A S D A S - Song of time</p>
+          <p>S A D S A D - Inverted song of time</p>
+          <p>F D S F D S - Song of Healing</p>
+          <p>A S G A S G - Song of Storms</p>
+        </div>
+      </div>
+    </div>
+
     <header class="moon">
-        <img src="assets/img/Moon.png" alt="">
+      <img src="assets/img/Moon.png" alt="" />
     </header>
     <main class="Link">
-        <img src="assets/img/DekuLink.png" class="link" alt="">
+      <img src="assets/img/DekuLink.png" class="link" alt="" />
     </main>
-    
-    <audio class="audio play_buttonA" src="assets/sound/long/MM_Notes_Pipes_D_med.wav"></audio>
-    <audio class="audio play_buttonB" src="assets/sound/long/MM_Notes_Pipes_F_med.wav"></audio>
-    <audio class="audio play_buttonC" src="assets/sound/long/MM_Notes_Pipes_A_med.wav"></audio>
-    <audio class="audio play_buttonD" src="assets/sound/long/MM_Notes_Pipes_B_med.wav"></audio>
-    <audio class="audio play_buttonE" src="assets/sound/long/MM_Notes_Pipes_D2_med.wav"></audio>
+
+    <audio
+      class="audio play_KeyA"
+      src="assets/sound/long/MM_Notes_Pipes_D_med.wav"
+    ></audio>
+    <audio
+      class="audio play_KeyS"
+      src="assets/sound/long/MM_Notes_Pipes_F_med.wav"
+    ></audio>
+    <audio
+      class="audio play_KeyD"
+      src="assets/sound/long/MM_Notes_Pipes_A_med.wav"
+    ></audio>
+    <audio
+      class="audio play_KeyF"
+      src="assets/sound/long/MM_Notes_Pipes_B_med.wav"
+    ></audio>
+    <audio
+      class="audio play_KeyG"
+      src="assets/sound/long/MM_Notes_Pipes_D2_med.wav"
+    ></audio>
 
     <audio class="play_gasp" src="assets/sound/MM_DekuLink_Gasp1.wav"></audio>
 
+    <audio
+      src="/assets/sound/songs/Deku pipes song of time.mp3"
+      class="songOfTime"
+    ></audio>
+    <audio
+      src="/assets/sound/Songs/Deku pipes Inverted song of time.mp3"
+      class="songInvertedTime"
+    ></audio>
+    <audio
+      src="/assets/sound/Songs/Deku pipes Song of healing.mp3"
+      class="songOfHealing"
+    ></audio>
+    <audio
+      src="/assets/sound/Songs/Deku pipes Song of storms.mp3"
+      class="songOfStorms"
+    ></audio>
+
     <script src="assets/script/script_zoraPlace.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

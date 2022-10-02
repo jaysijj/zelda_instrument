@@ -1,40 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Goron Village</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/goronVillage.css">
-</head>
-<body class="goronVillage">
-
-    <div id="botoes" >
-        <button class="btt buttonA">A</button>
-        <button class="btt buttonB">S</button>
-        <button class="btt buttonC">D</button>
-        <button class="btt buttonD">F</button>
-        <button class="btt buttonE">G</button>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/goronVillage.css" />
+  </head>
+  <body class="goronVillage">
+    <div id="botoes">
+      <button class="btt buttonA">A</button>
+      <button class="btt buttonB">S</button>
+      <button class="btt buttonC">D</button>
+      <button class="btt buttonD">F</button>
+      <button class="btt buttonE">G</button>
     </div>
 
     <section>
-        <a href="../../index.html"><img class="mask maskDeku" src="../img/Deku-Mask.png" alt=""></a>
-        <a href="goronPlace.html"><img class="mask maskGoron" src="../img/Goron-Mask.png" alt=""></a>
-        <a href="zoraPlace.html">        <img class="mask maskZora" src="../img/Zora-Mask.png" alt=""></a>
+      <a href="../../index.html"
+        ><img class="mask maskDeku" src="../img/Deku-Mask.png" alt=""
+      /></a>
+      <a href="goronPlace.html"
+        ><img class="mask maskGoron" src="../img/Goron-Mask.png" alt=""
+      /></a>
+      <a href="zoraPlace.html">
+        <img class="mask maskZora" src="../img/Zora-Mask.png" alt=""
+      /></a>
     </section>
+    <div class="dust">
+      <img class="dust1" src="../img/batGoron.png" alt="" />
+      <img class="dust2" src="../img/batGoron.png" alt="" />
+    </div>
+
+    <div class="partituras">
+      <img class="partituraButton" src="../img/menu-line.svg" alt="" />
+      <div class="partitura">
+        <div class="tabela">
+          <h3>Melodias</h3>
+          <p>D A S D A S - Song of time</p>
+          <p>S A D S A D - Inverted song of time</p>
+          <p>F D S F D S - Song of Healing</p>
+          <p>A S G A S G - Song of Storms</p>
+        </div>
+      </div>
+    </div>
+
     <main class="Link goronLink">
-        <img src="../img/goronLink.png" class="link" alt="">
+      <img src="../img/goronLink.png" class="link" alt="" />
     </main>
 
-    <audio src="../sound/MM_Notes_Drums_D_long.wav" class="audio play_buttonA"></audio>
-    <audio src="../sound/MM_Notes_Drums_F_long.wav" class="audio play_buttonB"></audio>
-    <audio src="../sound/MM_Notes_Drums_A_long.wav" class="audio play_buttonC"></audio>
-    <audio src="../sound/MM_Notes_Drums_B_long.wav" class="audio play_buttonD"></audio>
-    <audio src="../sound/MM_Notes_Drums_D2_long.wav" class="audio play_buttonE"></audio>
+    <audio
+      src="../sound/MM_Notes_Drums_D_long.wav"
+      class="audio play_buttonA"
+    ></audio>
+    <audio
+      src="../sound/MM_Notes_Drums_F_long.wav"
+      class="audio play_buttonB"
+    ></audio>
+    <audio
+      src="../sound/MM_Notes_Drums_A_long.wav"
+      class="audio play_buttonC"
+    ></audio>
+    <audio
+      src="../sound/MM_Notes_Drums_B_long.wav"
+      class="audio play_buttonD"
+    ></audio>
+    <audio
+      src="../sound/MM_Notes_Drums_D2_long.wav"
+      class="audio play_buttonE"
+    ></audio>
 
     <audio class="play_gasp" src="../sound/MM_GoronLink_Gasp1.wav"></audio>
 
+    <audio
+      src="../sound/Songs/Goron drums Song of time.mp3"
+      class="songOfTime"
+    ></audio>
+    <audio
+      src="../sound/Songs/Goron drums Inverted song of time.mp3"
+      class="songInvertedTime"
+    ></audio>
+    <audio
+      src="../sound/Songs/Goron drums Song of healing.mp3"
+      class="songOfHealing"
+    ></audio>
+    <audio
+      src="../sound/Songs/Goron drums Song of storms.mp3"
+      class="songOfStorms"
+    ></audio>
+
     <script src="../script/script_zoraPlace.js"></script>
-</body>
+  </body>
 </html>
