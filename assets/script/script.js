@@ -1,108 +1,138 @@
-/*const letters = ['buttonA', 'buttonB', 'buttonC', 'buttonD', 'buttonE']
-const playAll = ['playA', 'playB', 'playC', 'playD', 'playE']
- 
+const listaButton = document.querySelectorAll('.btt')
+const link = document.querySelector('.link')
+const songOfTime = ['KeyD', 'KeyA', 'KeyS', 'KeyD', 'KeyA', 'KeyS']
+const songInvertedTime = ['KeyS', 'KeyA', 'KeyD', 'KeyS', 'KeyA', 'KeyD']
+const songOfHealing = ['KeyF', 'KeyD', 'KeyS', 'KeyF', 'KeyD', 'KeyS']
+const songOfStorms = ['KeyA', 'KeyS', 'KeyG', 'KeyA', 'KeyS', 'KeyG']
+const listaKey = []
+const listaKey2 = []
+const listaKey3 = []
+const listaKey4 = []
+let action = true
 
-for (let i=0; i<playAll.length;i++){
-    const link = document.querySelector(letters[i])
-    link.addEventListener('click', playAlli(`.play_${letters[i]}`))
+for (let i = 0; i < listaButton.length; i++) {
+  const tecla = listaButton[i]
+  const instrumento = tecla.classList[1] //serve para acessar a segunda classe do elemento
+
+  tecla.onmousedown = function () {
+    if (action === true) {
+      playAll(`.play_${instrumento}`)
+      //link.setAttribute('class','Link-active')
+      link.classList.add('Link-active')
+      tecla.classList.add('btt_active')
+      PlayMelody(instrumento)
+    }
+  }
+  tecla.onmouseup = function () {
+    //link.setAttribute('class', '')
+    link.classList.remove('Link-active')
+    tecla.classList.remove('btt_active')
+  }
+
+  // Associando as teclas para acionar o som
+  const keys = ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG']
+  addEventListener('keydown', evento => {
+    if (evento.repeat) {
+      //evitar que crie um looping ao pressionar uma tecla.
+      return
+    }
+    if (evento.code == keys[i] && action === true) {
+      playAll(`.play_${instrumento}`)
+      link.classList.add('Link-active')
+      tecla.classList.add('btt_active')
+      PlayMelody(evento.code)
+    }
+  })
+  addEventListener('keyup', evento => {
+    if (evento.code == keys[i]) {
+      link.classList.remove('Link-active')
+      tecla.classList.remove('btt_active')
+    }
+  })
 }
 
-function playAlli(evento){
-    let noteAudio = document.querySelector(evento)
-    noteAudio.play()
-} */
-const maskDeku0 = document.querySelector('.maskDeku')
-const link0 = document.querySelector('.Link')
-link0.addEventListener('click', gaspDeku)
-maskDeku0.addEventListener('click', gaspDeku)
-
-const link = document.querySelector('.buttonA')
-link.addEventListener('click', playA)
-
-
-
-
-const linkSoltar = document.querySelector('.play_buttonA')
-
-
-const link2 = document.querySelector('.buttonB')
-link2.addEventListener('click', playB)
-
-const link3 = document.querySelector('.buttonC')
-link3.addEventListener('click', playC)
-
-const link4 = document.querySelector('.buttonD')
-link4.addEventListener('click', playD)
-
-const link5 = document.querySelector('.buttonE')
-link5.addEventListener('click', playE)
-
-
-// vai movimentar o personagem ao clicar no botão
-const listAll = document.querySelectorAll('.Pipe')
-for (let i=0;i<listAll.length;i++){
-    const tecla = listAll[i]
-    tecla.addEventListener('mousedown', ()=>{
-        const k = document.querySelector('main')
-        //k.classList.add('Link-active')
-        k.children[0].setAttribute('class','Link-active')
-    })
-    tecla.addEventListener('mouseup', ()=>{
-        const k = document.querySelector('main')
-        k.children[0].setAttribute('class','')
-    })
+function playAll(evento) {
+  let audio = document.querySelector(evento)
+  audio.currentTime = 0
+  audio.play()
 }
 
+function PlayMelody(botao) {
+  // const botao = evento.code
+  listaKey.push(botao)
+  listaKey2.push(botao)
+  listaKey3.push(botao)
+  listaKey4.push(botao)
 
+  for (let i = 0; listaKey.length > i; i++) {
+    if (listaKey[i] !== songOfTime[i]) {
+      listaKey.splice(0, i)
+    }
+  }
+  for (let i = 0; listaKey2.length > i; i++) {
+    if (listaKey2[i] !== songInvertedTime[i]) {
+      listaKey2.splice(0, i)
+    }
+  }
+  for (let i = 0; listaKey3.length > i; i++) {
+    if (listaKey3[i] !== songOfHealing[i]) {
+      listaKey3.splice(0, i)
+    }
+  }
+  for (let i = 0; listaKey4.length > i; i++) {
+    if (listaKey4[i] !== songOfStorms[i]) {
+      listaKey4.splice(0, i)
+    }
+  }
 
+  if (JSON.stringify(listaKey) == JSON.stringify(songOfTime)) {
+    let song = document.querySelector('.songOfTime')
+    song.play()
+    MovimentLink(song)
+  } else if (JSON.stringify(listaKey2) == JSON.stringify(songInvertedTime)) {
+    let song = document.querySelector('.songInvertedTime')
+    song.play()
+    MovimentLink(song)
+  } else if (JSON.stringify(listaKey3) == JSON.stringify(songOfHealing)) {
+    let song = document.querySelector('.songOfHealing')
+    song.play()
+    MovimentLink(song)
+  } else if (JSON.stringify(listaKey4) == JSON.stringify(songOfStorms)) {
+    let song = document.querySelector('.songOfStorms')
+    song.play()
+    MovimentLink(song)
+  }
 
+  if (listaKey.length == 6) {
+    listaKey.splice(0, 6)
+  }
+  if (listaKey2.length == 6) {
+    listaKey2.splice(0, 6)
+  }
+  if (listaKey3.length == 6) {
+    listaKey3.splice(0, 6)
+  }
+  if (listaKey4.length == 6) {
+    listaKey4.splice(0, 6)
+  }
+}
 
-window.addEventListener('keydown', (evento)=>{
-    console.log(evento)
-    if (evento.code == 'KeyA'){
-        playA()
-    }
-    if (evento.code == 'KeyS'){
-        playB()
-    }
-    if (evento.code == 'KeyD'){
-        playC()
-    }
-    if (evento.code == 'KeyF'){
-        playD()
-    }
-    if (evento.code == 'KeyG'){
-        playE()
-    }
+function MovimentLink(song) {
+  action = false
+  link.classList.add('Link-activeLonger')
+  function removeLink() {
+    action = true
+    link.classList.remove('Link-activeLonger')
+  }
+  setTimeout(removeLink, song.duration * 1000)
+}
+
+addEventListener('load', () => {
+  document.querySelector('.play_gasp').play()
 })
 
-function playA(){
-    let noteAudio = document.querySelector('.play_buttonA')
-    noteAudio.currentTime = 0 //Retira o delay de aperto consecutivo das teclas
-    noteAudio.play()
-}
-function playB(){
-    let noteAudio = document.querySelector('.play_buttonB')
-    noteAudio.currentTime = 0
-    noteAudio.play()
-}
-function playC(){
-    let noteAudio = document.querySelector('.play_buttonC')
-    noteAudio.currentTime = 0
-    noteAudio.play()
-}
-function playD(){
-    let noteAudio = document.querySelector('.play_buttonD')
-    noteAudio.currentTime = 0
-    noteAudio.play()
-}
-function playE(){
-    let noteAudio = document.querySelector('.play_buttonE')
-    noteAudio.currentTime = 0
-    noteAudio.play()
-}
-function gaspDeku(){
-    document.querySelector('.play_gasp').play()
-}
-
-addEventListener('load', gaspDeku)
+const buttonPart = document.querySelector('.partituraButton')
+const parti = document.querySelector('.partitura')
+buttonPart.addEventListener('click', () => {
+  parti.classList.toggle('partInvisible')
+})

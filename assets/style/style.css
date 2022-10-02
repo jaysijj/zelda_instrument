@@ -168,6 +168,7 @@
 
 .partitura{
     position: absolute;
+    z-index: 5;
     top: 20%;
     right: 2%;
     width: 245px;
